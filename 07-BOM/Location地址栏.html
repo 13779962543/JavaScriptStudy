@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            text-align: center;
+        }
+        span{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        注册成功!<span id="time">5</span>秒后自动跳转到首页...
+    </p>
+</body>
+<script>
+    //定义方法，改变秒数，跳转页面
+    let num=5;
+    function showTime(){
+        num--;
+        if(num<=0){
+            location.href="index.html";
+        }
+        let span=document.getElementById("time");
+        span.innerHTML=num;
+    }
+
+
+    //设置循环定时器,每一秒中执行showTime方法
+    setInterval("showTime()",1000);
+</script>
+</html>
